@@ -37,6 +37,6 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       if: always()
       with:
-        github_token: ${{ secrets.ACCESS_TOKEN }}
+        github_token:  ${{ secrets.ACCESS_TOKEN }}
         publish_dir: ./playwright-report 
         destination_dir: docs
