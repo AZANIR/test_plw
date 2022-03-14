@@ -1,0 +1,22 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="13.636">
+<testsuite name="example.spec.ts" timestamp="1646311967953" hostname="" tests="2" failures="0" skipped="0" time="12.781" errors="0">
+<testcase name="two tests basic test" classname="[chromium] › example.spec.ts:12:3 › two tests › basic test" time="2.556">
+<system-out>
+
+[[ATTACHMENT|..\test-results\example-two-tests-basic-test-chromium\2d820628b055541c4c397ddaf4d9e041.webm]]
+
+[[ATTACHMENT|..\test-results\example-two-tests-basic-test-chromium\trace.zip]]
+
+</system-out>
+</testcase>
+<testcase name="two tests test" classname="[chromium] › example.spec.ts:18:3 › two tests › test" time="10.225">
+<system-out>
+
+[[ATTACHMENT|..\test-results\example-two-tests-test-chromium\372d06640f7b0d430c6b23eabc6f3e85.webm]]
+
+[[ATTACHMENT|..\test-results\example-two-tests-test-chromium\trace.zip]]
+
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
