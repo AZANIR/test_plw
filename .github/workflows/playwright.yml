@@ -37,7 +37,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@3.1.0
       if: always()
       with:
-        token: ${{'secrets.ACCESS_TOKEN'}}
-        branch: main # The branch the action should deploy to.
-        folder: playwright-report # The folder the action should deploy.
-        target-folder: docs
+        ACCESS_TOKEN: ${{'secrets.ACCESS_TOKEN'}}
+        BRANCH: main # The branch the action should deploy to.
+        FOLDER: playwright-report # The folder the action should deploy.
+        TARGET_FOLDER: docs
