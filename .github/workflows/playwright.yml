@@ -34,7 +34,7 @@ jobs:
         name: playwright-report
         path: ./playwright-report
     - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: JamesIves/github-pages-deploy-action@v3
       if: always()
       with:
         token: ${{'secrets.ACCESS_TOKEN'}}
