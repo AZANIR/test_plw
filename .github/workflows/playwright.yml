@@ -33,11 +33,10 @@ jobs:
       with:
         name: playwright-report
         path: ./playwright-report
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.2.5
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       if: always()
       with:
-        ACCESS_TOKEN: ${{'secrets.ACCESS_TOKEN'}}
-        BRANCH: main # The branch the action should deploy to.
-        FOLDER: playwright-report # The folder the action should deploy.
-        TARGET_FOLDER: docs
+        github_token: ${{ secrets.ACCESS_TOKEN }}
+        publish_dir: ./playwright-report 
+        destination_dir: docs
