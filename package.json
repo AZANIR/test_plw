@@ -1,0 +1,37 @@
+{
+  "name": "playwrighttest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest":"npm run playwright:clean && npm run allure:clean",
+    "test": "npm run pretest && npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:htmlreport": "npx playwright show-report",
+    "playwright:clean": "rm -rf playwright-report test-results",
+    "test:debug": "npx playwright test --debug",
+    "allure:open":"allure open ./allure-report",
+    "allure:clean": "rm -rf allure-results allure-report",
+    "allure:history": "cp -R allure-report/history allure-results",
+    "allure:serve": "npx allure serve allure-results",
+    "allure:serve:hi": "npm run allure:history && npx allure serve allure-results",
+    "allure:generate:hi": "npm run allure:history && npx allure generate allure-results --clean",
+    "allure:generate": "npx allure generate allure-results --clean",
+    "test:codegen": "npx playwright codegen --output tests/generated.spec.ts"
+  }, 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AZANIR/PlaywrightTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AZANIR/PlaywrightTest/issues"
+  },
+  "homepage": "https://github.com/AZANIR/PlaywrightTest#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.17.1",
+    "allure-playwright": "^2.0.0-beta.14"
+  }
+}

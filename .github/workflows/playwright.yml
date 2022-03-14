@@ -1,0 +1,43 @@
+name: Playwright Tests
+on:
+  push:
+    branches: [ main, master ]
+  # pull_request:
+  #   branches: [ main, master ]
+
+jobs:
+  Run_test:
+    runs-on: ubuntu-20.04 # Choosing OS
+    strategy:
+      matrix:
+        node-version: [14.17.0]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+      # trying to install npm packages
+    - run: npm i -g npm@latest
+    - run: npm i npm@latest
+    - run: npm i
+    - run: npx playwright install 
+    - name: run test
+      # trying to run tests
+      run: npx playwright test
+    - name: Upload artifact playwright-report
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report
+        path: ./playwright-report
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      if: always()
+      with:
+        ACCESS_TOKEN: ${{'secrets.ACCESS_TOKEN'}}
+        BRANCH: main # The branch the action should deploy to.
+        FOLDER: playwright-report # The folder the action should deploy.
+        TARGET_FOLDER: docs
