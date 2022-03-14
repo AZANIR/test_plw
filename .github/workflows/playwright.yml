@@ -38,5 +38,5 @@ jobs:
       if: always()
       with:
         github_token:  ${{ secrets.ACCESS_TOKEN }}
-        publish_dir: ./playwright-report 
-        destination_dir: docs
+        publish_dir:  docs
+        destination_dir: ./playwright-report
